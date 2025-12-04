@@ -6,6 +6,21 @@ margin: 0;
 
 }
 .logo150{
-    margin-left: 30%;
-    margin-right: 30%;
+    text-align: center; 
+
+}
+
+.wrapper {
+  perspective: 800px;
+}
+
+.logo {
+  width: 200px;
+  transform-style: preserve-3d;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
 }
