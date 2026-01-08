@@ -1,124 +1,135 @@
-*{box-sizing:border-box;}
+*{
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* ==== HÁTTÉR ==== */
 body{
-  margin:0;
-  font-family:'Segoe UI', sans-serif;
-  background:url(kep/202304211050201709793104_IMG_6706.jpg) center/cover fixed;
-  color:white;
+  background-image: url(kep/202304211050201709793104_IMG_6706.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: white;
 }
 
-/* ===== HEADER ===== */
-.main-header{
-  background: rgba(0,0,0,0.75);
-  padding:20px 0;
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top:0;
-  z-index:1000;
+/* ==== FEJLÉC ==== */
+.logo150{
+  height: 150px;
+  background: linear-gradient(90deg, #0b1c7a, #142fa6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
-.logo-area{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:20px;
-  padding-bottom:10px;
+/* ==== MENÜ ==== */
+.logo150 ul{
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
 }
 
-.logo{width:80px;animation:spinSlow 12s linear infinite;}
-@keyframes spinSlow{to{transform:rotateY(360deg);}}
-.intro-text{font-size:18px; text-align:center;}
-
-/* ===== MENU ===== */
-.main-nav ul{
-  display:flex;
-  justify-content:center;
-  list-style:none;
-  margin:0;
-  padding:0;
+.logo150 li{
+  cursor: pointer;
+  position: relative;
 }
 
-.menu{
-  position:relative;
-  padding:10px 20px;
-  margin:0 5px;
-  cursor:pointer;
-  border-radius:10px;
+.logo150 li::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:white;
   transition:0.3s;
 }
 
-/* Alapból rejtve az almenü */
-.submenu{
-  display:none; 
-  position:absolute;
-  top:100%;
-  left:0;
-  list-style:none;
-  padding:10px;
-  min-width:180px;
-  background:rgba(0,0,0,0.7);
-  border-radius:8px;
+.logo150 li:hover::after{
+  width:100%;
 }
 
-/* Csak hover-re jelenik meg */
-.menu:hover .submenu{
-  display:block;
-}
-.submenu li{
-  padding:6px 12px;
-  white-space: nowrap;
+/* ==== LOGÓ ==== */
+.logo{
+  width: 120px;
+  animation: spinSlow 10s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
 }
 
-
-/* Színek a menü pontokhoz */
-.tanitokepzo{background:#311d1f;color:#fcf5a8;}
-.testneveles{background:#1f3864;color:#bbd5ed;}
-.petofi{background:#385723;color:#ccffcc;}
-.gepeszet{background:#636466;color:#dcddde;}
-.szentbenedek{background:#6d4e27;color:#f3dbaf;}
-.mozaik{background:#8a0054;color:#e2d0d9;}
-
-/* ===== TARTALOM ===== */
-.glass{
-  max-width:1100px;
-  margin:60px auto;
-  padding:40px;
-  background:rgba(255,255,255,0.12);
-  backdrop-filter:blur(14px);
-  border-radius:30px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.5);
+@keyframes spinSlow {
+  from { transform: rotateY(0); }
+  to { transform: rotateY(360deg); }
 }
-.era{
-  display:grid;
-  grid-template-columns:1fr 1.2fr;
-  gap:40px;
-  align-items:center;
-  margin-bottom:80px;
+
+/* ==== HERO ==== */
+.hero{
+  height: calc(100vh - 150px);
+  backdrop-filter: blur(6px);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-.era-image img{width:100%;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.5);}
-.era-text h2{margin-top:0;font-size:32px;}
-.era-text p{line-height:1.7;font-size:17px;}
 
-/* Korszak színek */
-.tanitokepzo-era h2{color:#fcf5a8;}
-.testneveles-era h2{color:#bbd5ed;}
-.petofi-era h2{color:#ccffcc;}
-.gepeszet-era h2{color:#dcddde;}
-.szentbenedek-era h2{color:#f3dbaf;}
-.adat-era h2{color:#e2d0d9;}
-
-/* ===== FOOTER ===== */
-.footer{
-  background:rgba(0,0,0,0.85);
-  padding:40px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
+.hero h1{
+  font-size: 48px;
 }
-.footer ul{list-style:none;padding:0;}
-.footer-copy{grid-column:1/-1;text-align:center;opacity:0.7;}
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-  .era{grid-template-columns:1fr;text-align:center;}
-  .main-nav ul{flex-direction:column;}
+.hero p{
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+/* ==== BELÉPŐ ANIM ==== */
+.fade-in{
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+.delay{
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn{
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+  from{
+    transform: translateY(20px);
+  }
+}
+
+/* ==== TARTALOM KÁRTYÁK ==== */
+.content{
+  padding: 80px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card{
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.card:hover{
+  transform: scale(1.05);
+  background: rgba(20,47,166,0.9);
 }
