@@ -1,55 +1,137 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 html, body{
-  width: 100%;
-  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
+
+/* ==== HÁTTÉR ==== */
 body{
-background-size: auto;
-background-image:url(kep/202304211050201709793104_IMG_6706.jpg);
-backdrop-filter: blur(5px);
-margin: 0;
-padding: 0px;
-padding-left: 0px;
-padding-bottom: 0px;
-padding-top: 0px;
-padding-right: 0px;
-background-repeat: repeat-y no-repeat;
-
-}
-.logo150{
-    text-align: center; 
-    background-color: rgb(21, 21, 150);
-    height: 150px;
-
-}
-
-.wrapper {
-  perspective: 20px;
-}
-
-.logo {
-  width: 140px;
-  animation: spin 4s linear infinite;
-  perspective: 10px;
-}
-
-.logo150 ul{
-  position: absolute;
-  width: 100%;
-  height: 0px;
-  display: flex;
-  flex-direction: row;
+  background-image: url(kep/202304211050201709793104_IMG_6706.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   color: white;
-  padding-top: 20px;
-  
+}
+
+/* ==== FEJLÉC ==== */
+.logo150{
+  height: 150px;
+  background: linear-gradient(90deg, #0b1c7a, #142fa6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* ==== MENÜ ==== */
+.logo150 ul{
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
 }
 
 .logo150 li{
-  width:16%;
-  text-align: left;
-  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+}
 
+.logo150 li::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:white;
+  transition:0.3s;
 }
-@keyframes spin {
-  from { transform: rotateY(0deg); }
-  to   { transform: rotateY(360deg); }
+
+.logo150 li:hover::after{
+  width:100%;
 }
+
+/* ==== LOGÓ ==== */
+.logo{
+  width: 120px;
+  animation: spinSlow 10s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
+}
+
+@keyframes spinSlow {
+  from { transform: rotateY(0); }
+  to { transform: rotateY(360deg); }
+}
+
+/* ==== HERO ==== */
+.hero{
+  height: calc(100vh - 150px);
+  backdrop-filter: blur(6px);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1{
+  font-size: 48px;
+}
+
+.hero p{
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+/* ==== BELÉPŐ ANIM ==== */
+.fade-in{
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+.delay{
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn{
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+  from{
+    transform: translateY(20px);
+  }
+}
+
+/* ==== TARTALOM KÁRTYÁK ==== */
+.content{
+  padding: 80px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card{
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.card:hover{
+  transform: scale(1.05);
+  background: rgba(20,47,166,0.9);
+}
+
+
