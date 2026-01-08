@@ -16,6 +16,30 @@ body{
   background-attachment: fixed;
   background-position: center;
   color: white;
+  background-size: auto;
+  background-image:url(kep/202304211050201709793104_IMG_6706.jpg);
+  backdrop-filter: blur(5px);
+  margin: 0;
+  padding: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  background-repeat: repeat-y no-repeat;
+  background-image: url(kep/202304211050201709793104_IMG_6706.jpg);
+  background-position: center center;   /* KÖZÉPRE */
+  background-repeat: no-repeat;          /* ne ismétlődjön */
+  background-size: cover;                /* töltse ki a képernyőt */
+  
+  backdrop-filter: blur(5px);
+  margin: 0;
+  padding: 0;
+
+}
+.logo150{
+    text-align: center; 
+    background-color: rgb(21, 21, 150);
+    height: 150px;
 }
 
 /* ==== FEJLÉC ==== */
@@ -132,4 +156,7 @@ body{
 .card:hover{
   transform: scale(1.05);
   background: rgba(20,47,166,0.9);
+}
+.footer{
+  
 }
