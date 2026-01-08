@@ -9,7 +9,7 @@ html, body{
   height: 100%;
 }
 
-/* ==== HÁTTÉR ==== */
+
 body{
   background-image: url(kep/202304211050201709793104_IMG_6706.jpg);
   background-size: cover;
@@ -18,7 +18,7 @@ body{
   color: white;
 }
 
-/* ==== FEJLÉC ==== */
+
 .logo150{
   height: 150px;
   background: linear-gradient(90deg, #0b1c7a, #142fa6);
@@ -29,7 +29,7 @@ body{
   box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
-/* ==== MENÜ ==== */
+
 .logo150 ul{
   display: flex;
   list-style: none;
@@ -58,7 +58,7 @@ body{
   width:100%;
 }
 
-/* ==== LOGÓ ==== */
+
 .logo{
   width: 120px;
   animation: spinSlow 10s linear infinite;
@@ -70,7 +70,7 @@ body{
   to { transform: rotateY(360deg); }
 }
 
-/* ==== HERO ==== */
+
 .hero{
   height: calc(100vh - 150px);
   backdrop-filter: blur(6px);
@@ -90,7 +90,7 @@ body{
   opacity: 0.8;
 }
 
-/* ==== BELÉPŐ ANIM ==== */
+
 .fade-in{
   opacity: 0;
   animation: fadeIn 1.5s forwards;
@@ -110,7 +110,7 @@ body{
   }
 }
 
-/* ==== TARTALOM KÁRTYÁK ==== */
+
 .content{
   padding: 80px;
   display: flex;
