@@ -1,11 +1,10 @@
-const reveals = document.querySelectorAll('.reveal');
-
-window.addEventListener('scroll', () => {
-  reveals.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }
+// Menü kattintásra a megfelelő fejezet megjelenítése
+document.querySelectorAll('.menu').forEach(menu=>{
+  menu.addEventListener('click',()=>{
+    const target = menu.getAttribute('data-target');
+    document.querySelectorAll('.era').forEach(sec=>sec.style.display='none');
+    const el = document.querySelector('.'+target);
+    if(el) el.style.display='grid';
+    el.scrollIntoView({behavior:'smooth', block:'start'});
   });
 });
