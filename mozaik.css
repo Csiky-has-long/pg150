@@ -30,6 +30,7 @@ body{
   background-position: center center;   /* KÖZÉPRE */
   background-repeat: no-repeat;          /* ne ismétlődjön */
   background-size: cover;                /* töltse ki a képernyőt */
+ background-attachment: fixed; /* fix a parallax-szerű hatásért */
   
   backdrop-filter: blur(5px);
   margin: 0;
