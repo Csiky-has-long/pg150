@@ -45,7 +45,7 @@ body{
 /* ==== FEJLÉC ==== */
 .logo150{
   height: 150px;
-  background: linear-gradient(90deg, #0b1c7a, #142fa6);
+  background: linear-gradient(90deg, #385723, #4f7a35);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -96,23 +96,34 @@ body{
 
 /* ==== HERO ==== */
 .hero{
-  height: calc(100vh - 150px);
+  min-height: calc(100vh - 150px); /* FONTOS */
   backdrop-filter: blur(6px);
+
   display:flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* NE középre */
+
   text-align: center;
+  padding: 60px 40px;
+  gap: 30px;
+
+  margin-top: 20px;    /* fejléc alá tér */
+  margin-bottom: 60px; /* footer fölé tér */
 }
+
 
 .hero h1{
   font-size: 48px;
+  margin-bottom: 20px;
 }
 
+
 .hero p{
-  font-size: 20px;
-  opacity: 0.8;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
+
 
 /* ==== BELÉPŐ ANIM ==== */
 .fade-in{
@@ -160,7 +171,40 @@ body{
 .footer{
     backdrop-filter: blur(5px);
 }
+
+.footer-copy{
+  margin-top: 40px;
+  padding: 20px;
+}
+
+
 ul li a {
     color: rgb(255, 255, 255);          
     text-decoration: none; 
+}
+
+/* ==== HERO KÉP FORMÁZÁS ==== */
+.hero-img {
+  max-width: 600px;          /* ne legyen túl nagy */
+  width: 90%;                /* mobilbarát */
+  margin: 30px auto;         /* középre */
+  display: block;
+
+  border-radius: 15px;       /* lekerekítés */
+  border: 4px solid #385723; /* zöld keret */
+  
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(204,255,204,0.3);
+  
+  background-color: rgba(56, 87, 35, 0.2);
+}
+
+/* ==== MOBIL FINOMHANGOLÁS ==== */
+@media (max-width: 768px) {
+  .hero-img {
+    max-width: 100%;
+    margin: 20px auto;
+    border-width: 3px;
+  }
 }
