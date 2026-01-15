@@ -40,6 +40,8 @@ body{
     text-align: center; 
     background-color: rgb(21, 21, 150);
     height: 150px;
+    font-style: italic;
+  
 }
 
 /* ==== FEJLÉC ==== */
@@ -158,5 +160,9 @@ body{
   background: rgba(20,47,166,0.9);
 }
 .footer{
-  
+    backdrop-filter: blur(5px);
+}
+ul li a {
+    color: rgb(255, 255, 255);          
+    text-decoration: none; 
 }
