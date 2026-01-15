@@ -160,3 +160,7 @@ body{
 .footer{
     backdrop-filter: blur(5px);
 }
+ul li a {
+    color: rgb(255, 255, 255);          
+    text-decoration: none; 
+}
