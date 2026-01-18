@@ -1,61 +1,60 @@
-*{
+* {
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
 }
 
-html, body{
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
 /* ==== HÁTTÉR ==== */
-body{
-  background-image: url(kep/202304211050201709793104_IMG_6706.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+body {
+  position: relative;
+  min-height: 100vh;
   color: white;
-  background-size: auto;
-  background-image:url(kep/202304211050201709793104_IMG_6706.jpg);
-  backdrop-filter: blur(5px);
-  margin: 0;
-  padding: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-  padding-right: 0px;
-  background-repeat: repeat-y no-repeat;
-  background-image: url(kep/202304211050201709793104_IMG_6706.jpg);
-  background-position: center center;   /* KÖZÉPRE */
-  background-repeat: no-repeat;          /* ne ismétlődjön */
-  background-size: cover;                /* töltse ki a képernyőt */
- background-attachment: fixed; /* fix a parallax-szerű hatásért */
-  
-  backdrop-filter: blur(5px);
-  margin: 0;
-  padding: 0;
-
 }
-.logo150{
-    text-align: center; 
-    background-color: rgb(21, 21, 150);
-    height: 150px;
+
+/* HÁTTÉR RÉTEG */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image: url("kep/202304211050201709793104_IMG_6706.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(6px);
+  transform: scale(1.05);
+  /* blur szélek elkerülése */
+  z-index: -1;
+}
+
+.logo150 {
+  text-align: center;
+  background-color: rgb(21, 21, 150);
+  height: 150px;
 }
 
 /* ==== FEJLÉC ==== */
-.logo150{
+.logo150 {
   height: 150px;
-  background: linear-gradient(90deg, #0b1c7a, #142fa6);
+  background: linear-gradient(90deg, #8a0054, #E2d0d9
+
+);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* ==== MENÜ ==== */
-.logo150 ul{
+.logo150 ul {
   display: flex;
   list-style: none;
   gap: 30px;
@@ -63,89 +62,104 @@ body{
   margin: 0;
 }
 
-.logo150 li{
+.logo150 li {
   cursor: pointer;
   position: relative;
 }
 
-.logo150 li::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:-5px;
-  width:0;
-  height:2px;
-  background:white;
-  transition:0.3s;
+.logo150 li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
 }
 
-.logo150 li:hover::after{
-  width:100%;
+.logo150 li:hover::after {
+  width: 100%;
 }
 
 /* ==== LOGÓ ==== */
-.logo{
+.logo {
   width: 120px;
   animation: spinSlow 10s linear infinite;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
 }
 
 @keyframes spinSlow {
-  from { transform: rotateY(0); }
-  to { transform: rotateY(360deg); }
+  from {
+    transform: rotateY(0);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 /* ==== HERO ==== */
-.hero{
+
+.hero {
   height: calc(100vh - 150px);
-  backdrop-filter: blur(6px);
-  display:flex;
-  flex-direction: column;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
 }
 
-.hero h1{
+
+
+.hero h1 {
   font-size: 48px;
+  text-align: center;
+
 }
 
-.hero p{
+.fade-in {
   font-size: 20px;
   opacity: 0.8;
-  width: 30%;
+  text-align: center;
+  background: linear-gradient(90deg,6d4e27, #f3dbaf);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  width: 70%;
 }
 
+
 /* ==== BELÉPŐ ANIM ==== */
-.fade-in{
+.fade-in {
   opacity: 0;
   animation: fadeIn 1.5s forwards;
 }
 
-.delay{
+.delay {
   animation-delay: 0.5s;
 }
 
-@keyframes fadeIn{
-  to{
-    opacity:1;
+@keyframes fadeIn {
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
-  from{
+
+  from {
     transform: translateY(20px);
   }
 }
 
 /* ==== TARTALOM KÁRTYÁK ==== */
-.content{
+.content {
   padding: 80px;
   display: flex;
   gap: 30px;
   justify-content: center;
 }
 
-.card{
-  background: rgba(0,0,0,0.6);
+.card {
+  background: rgba(0, 0, 0, 0.6);
   padding: 40px;
   border-radius: 15px;
   width: 250px;
@@ -155,14 +169,29 @@ body{
   transition: 0.6s;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.05);
-  background: rgba(20,47,166,0.9);
+  background: rgba(255, 255, 255, 0.9);
 }
-.footer{
-    backdrop-filter: blur(5px);
+
+.footer {
+  backdrop-filter: blur(5px);
 }
+
 ul li a {
-    color: rgb(255, 255, 255);          
-    text-decoration: none; 
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.logo-container {
+    display: flex;               
+    justify-content: center;    
+    align-items: center;        
+    gap: 20px;                   
+    padding-top: 10px;
+}
+
+.logo1 {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+    max-width: 500px;           
 }

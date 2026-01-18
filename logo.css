@@ -10,33 +10,28 @@ html, body{
 }
 
 /* ==== HÁTTÉR ==== */
-body{
-  background-image: url(kep/202304211050201709793104_IMG_6706.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+body {
+  position: relative;
+  min-height: 100vh;
   color: white;
-  background-size: auto;
-  background-image:url(kep/202304211050201709793104_IMG_6706.jpg);
-  backdrop-filter: blur(5px);
-  margin: 0;
-  padding: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-  padding-right: 0px;
-  background-repeat: repeat-y no-repeat;
-  background-image: url(kep/202304211050201709793104_IMG_6706.jpg);
-  background-position: center center;   /* KÖZÉPRE */
-  background-repeat: no-repeat;          /* ne ismétlődjön */
-  background-size: cover;                /* töltse ki a képernyőt */
- background-attachment: fixed; /* fix a parallax-szerű hatásért */
-  
-  backdrop-filter: blur(5px);
-  margin: 0;
-  padding: 0;
-
 }
+
+/* HÁTTÉR RÉTEG */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image: url("kep/202304211050201709793104_IMG_6706.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(6px);
+  transform: scale(1.05); /* blur szélek elkerülése */
+  z-index: -1;
+}
+
 .logo150{
     text-align: center; 
     background-color: rgb(21, 21, 150);
@@ -96,22 +91,17 @@ body{
 }
 
 /* ==== HERO ==== */
-.hero{
+
+.hero {
   height: calc(100vh - 150px);
-  backdrop-filter: blur(6px);
-  display:flex;
-  flex-direction: column;
+  display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+    text-align: center;
+    flex-direction: column;
 }
-.blur{
-  backdrop-filter: blur(6px);
-  height: calc(100vh - 150px);
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-}
+
+
 
 .hero h1{
   font-size: 48px;
